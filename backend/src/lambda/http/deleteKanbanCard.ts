@@ -17,6 +17,7 @@ export const handler = middy(
     const jwtToken: string = getToken(event.headers.Authorization)
 
     try {
+      logger.info('In delete. kanbanCardId: ' + event.pathParameters)
       await deleteKanbanCard(kanbanCardId, jwtToken)
 
       return {

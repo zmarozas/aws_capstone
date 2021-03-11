@@ -49,6 +49,8 @@ export class KanbanCards extends React.PureComponent<KanbanCardsProps, KanbanCar
   }
 
   onEditButtonClick = (kanbanCardId: string) => {
+   
+    console.log('kanbanCardId:', kanbanCardId)
     this.props.history.push(`/kanbancards/${kanbanCardId}/edit`)
   }
 
@@ -161,12 +163,12 @@ export class KanbanCards extends React.PureComponent<KanbanCardsProps, KanbanCar
               color: 'teal',
               labelPosition: 'left',
               icon: 'add',
-              content: 'KanbanCard Entry',
+              content: 'Add New Kanban Card',
               onClick: this.onKanbanCardCreate
             }}
             fluid
             actionPosition="left"
-            placeholder="Kanban Card..."
+            placeholder="Type Description for Kanban Card..."
             onChange={this.handleNameChange}
           />
         </Grid.Column>

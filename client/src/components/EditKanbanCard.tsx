@@ -12,7 +12,7 @@ enum UploadState {
 interface EditKanbanCardProps {
   match: {
     params: {
-      diaryId: string
+      kanbanCardId: string
     }
   }
   auth: Auth
@@ -53,7 +53,7 @@ export class EditKanbanCard extends React.PureComponent<
       this.setUploadState(UploadState.FetchingPresignedUrl)
       const uploadUrl = await getUploadUrl(
         this.props.auth.getIdToken(),
-        this.props.match.params.diaryId
+        this.props.match.params.kanbanCardId
       )
 
       this.setUploadState(UploadState.UploadingFile)
@@ -76,7 +76,7 @@ export class EditKanbanCard extends React.PureComponent<
   render() {
     return (
       <div>
-        <h1>Upload new image</h1>
+        <h1>Upload New Image Related to Kanban Card</h1>
 
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>

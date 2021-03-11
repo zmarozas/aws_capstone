@@ -74,7 +74,7 @@ export async function createKanbanCard(
 
 export async function patchKanbanCard(
   idToken: string,
-  diaryId: string,
+  kanbanCardId: string,
   updatedKanbanCard: UpdateKanbanCardRequest
 ): Promise<void> {
   if (
@@ -87,7 +87,7 @@ export async function patchKanbanCard(
     JWTtoken = '123'
   }
   await Axios.patch(
-    `${Endpoint}/${subDirectory}/${diaryId}`,
+    `${Endpoint}/${subDirectory}/${kanbanCardId}`,
     JSON.stringify(updatedKanbanCard),
     {
       headers: {
@@ -100,7 +100,7 @@ export async function patchKanbanCard(
 
 export async function deleteKanbanCard(
   idToken: string,
-  diaryId: string
+  kanbanCardId: string
 ): Promise<void> {
   if (
     process.env.REACT_APP_IS_OFFLINE == 'false' ||
@@ -111,8 +111,8 @@ export async function deleteKanbanCard(
     console.log('Offline')
     JWTtoken = '123'
   }
-  console.log('Deletion endpoint', `${Endpoint}/${subDirectory}/${diaryId}`)
-  await Axios.delete(`${Endpoint}/${subDirectory}/${diaryId}`, {
+  console.log('Deletion endpoint', `${Endpoint}/${subDirectory}/${kanbanCardId}`)
+  await Axios.delete(`${Endpoint}/${subDirectory}/${kanbanCardId}`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${JWTtoken}`
@@ -122,7 +122,7 @@ export async function deleteKanbanCard(
 
 export async function getUploadUrl(
   idToken: string,
-  diaryId: string
+  kanbanCardId: string
 ): Promise<string> {
   if (
     process.env.REACT_APP_IS_OFFLINE == 'false' ||
@@ -134,7 +134,7 @@ export async function getUploadUrl(
     JWTtoken = '123'
   }
   const response = await Axios.post(
-    `${Endpoint}/${subDirectory}/${diaryId}/attachment`,
+    `${Endpoint}/${subDirectory}/${kanbanCardId}/attachment`,
     '',
     {
       headers: {

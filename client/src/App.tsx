@@ -96,7 +96,7 @@ export default class App extends Component<AppProps, AppState> {
         />
 
         <Route
-          path="/kanbancards/:kanbancardId/edit"
+          path="/kanbancards/:kanbanCardId/edit"
           exact
           render={(props) => {
             return <EditKanbanCard {...props} auth={this.props.auth} />

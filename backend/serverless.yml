@@ -1,5 +1,5 @@
 service:
-  name: serverless-kanban-card
+  name: sls-kanban
 
 custom:
   webpack:
@@ -13,13 +13,11 @@ custom:
         title: ${self:service.name}
         description: Serverless kanban-card application
 
-  # See: https://github.com/dherault/serverless-offline
   serverless-offline:
     port: 3003
 
-  # See: https://github.com/99xt/serverless-dynamodb-local
   dynamodb:
-    # If you only want to use DynamoDB Local in some stages, declare them here
+    #  DynamoDB Local for some stages
     stages:
       - dev
     start:
@@ -30,15 +28,14 @@ custom:
       migrate: true
       seed: true
       convertEmptyValues: true
-    # Uncomment only if you already have a DynamoDB running locally
+    # Uncomment if  DynamoDB runs locally
     # noStart: true
 
-    # See: https://github.com/ar90n/serverless-s3-local
   s3:
     host: localhost
     port: 8200
     directory: /tmp
-    #noStart: true
+    noStart: true
 
 plugins:
   - serverless-iam-roles-per-function
@@ -60,7 +57,7 @@ provider:
     apiGateway: true
 
   stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'af-south-1'}
+  region: ${opt:region, 'us-east-1'}
 
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
@@ -122,8 +119,6 @@ functions:
           documentation:
             summary: Create a new entry to the kanbancard.
             description: Create a new entry to the kanbancard.
-            # requestModels:
-            #   'application/json': SaveKanbanCardRequest
 
     iamRoleStatements:
       - Effect: Allow
@@ -144,13 +139,11 @@ functions:
           authorizer: Auth
           cors: true
           method: patch
-          path: kanbancards/{kanbancardId}
+          path: kanbancards/{kanbanCardId}
           reqValidatorName: RequestBodyValidator
           documentation:
             summary: Update a kanbancard entry
             description: Update a kanbancard entry
-            # requestModels:
-            #   'application/json': SaveKanbanCardRequest
 
     iamRoleStatements:
       - Effect: Allow
@@ -171,7 +164,7 @@ functions:
           authorizer: Auth
           cors: true
           method: delete
-          path: kanbancards/{kanbancardId}
+          path: kanbancards/{kanbanCardId}
           documentation:
             summary: Delete a kanbancard entry.
             description: Delete a kanbancard entry.
@@ -195,7 +188,7 @@ functions:
           authorizer: Auth
           cors: true
           method: post
-          path: kanbancards/{kanbancardId}/attachment
+          path: kanbancards/{kanbanCardId}/attachment
 
     iamRoleStatements:
       - Effect: Allow
