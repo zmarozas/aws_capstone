@@ -13,3 +13,6 @@ Serverless Kanban Board Management Application where a user can manage her workl
 
 ![login screen](https://github.com/zmarozas/aws_capstone/blob/main/screens/login.PNG?raw=true)
 ![created card](https://github.com/zmarozas/aws_capstone/blob/main/screens/created_item.PNG?raw=true)
+![created card](https://github.com/zmarozas/aws_capstone/blob/main/screens/item-with-picture.PNG?raw=true)
+
+item-with-picture
