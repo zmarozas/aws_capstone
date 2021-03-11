@@ -4,10 +4,10 @@ Serverless Kanban Board Management Application where a user can manage her workl
 
 ## Functionality of the application
 
-- [x] **A user needs to authenticate in order to use an application **
-- [x] **Kanban Board Management Application allows users to create, update, delete kanban card items.**
-- [x] **Kanban Board Management Application allows users to upload a file.**
-- [x] **Kanban Board Management Application only displays cards for a logged in user.**
+- [x] User of Kanban Board Management Application needs to authenticate in order to use an application.
+- [x] Kanban Board Management Application allows users to create, update, delete kanban card items.
+- [x] Kanban Board Management Application allows users to upload a file.
+- [x] Kanban Board Management Application only displays cards for a logged in user.
 
 ### Images
 
