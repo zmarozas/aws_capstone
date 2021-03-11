@@ -1,5 +1,3 @@
-# Serverless Daily Diary Application
-
 # Serverless Kanban Card Management Board Application
 
 Serverless Kanban Card Management Board Application where a user manage her workload.
