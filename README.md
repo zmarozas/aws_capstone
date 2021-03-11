@@ -6,4 +6,4 @@ Serverless Kanban Card Management Board Application where a user manage her work
 
 ### Images
 
-![alt text](https://github.com/zmarozas/aws_capstone/screens/main/login.PNG?raw=true)
+![login screen](https://github.com/zmarozas/aws_capstone/blob/main/screens/login.PNG?raw=true)
