@@ -37,7 +37,7 @@ Authentication in this application, is done through [Auth0](https://auth0.com/),
 
 ### The Backend
 
-The Backend is deployed on AWS as serverless application with AP ID: e8vrt7s2vj
+The Backend is deployed on AWS as serverless application with API Endpoint ID: **e8vrt7s2vj**
 However, it could be deployed as follows:
 
 ```bash
